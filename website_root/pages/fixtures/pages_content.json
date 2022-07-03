@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "title": "Home",
-        "permalink": "home",
+        "permalink": "/home",
         "page_content": "<p>The content of Home page.</p>"
     }
   },
@@ -13,7 +13,7 @@
     "pk": 2,
     "fields": {
         "title": "About us",
-        "permalink": "about",
+        "permalink": "/about",
         "page_content": "<p>The content of About page.</p>"
     }
   },
@@ -22,7 +22,7 @@
     "pk": 3,
     "fields": {
         "title": "FAQ",
-        "permalink": "faq",
+        "permalink": "/faq",
         "page_content": "<p>The content of FAQ page.</p>"
     }
   }
