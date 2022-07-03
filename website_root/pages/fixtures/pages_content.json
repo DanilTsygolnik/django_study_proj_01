@@ -1,0 +1,29 @@
+[
+  {
+    "model": "pages.Page",
+    "pk": 1,
+    "fields": {
+        "title": "Home",
+        "permalink": "home",
+        "page_content": "<p>The content of Home page.</p>"
+    }
+  },
+  {
+    "model": "pages.Page",
+    "pk": 2,
+    "fields": {
+        "title": "About us",
+        "permalink": "about",
+        "page_content": "<p>The content of About page.</p>"
+    }
+  },
+  {
+    "model": "pages.Page",
+    "pk": 3,
+    "fields": {
+        "title": "FAQ",
+        "permalink": "faq",
+        "page_content": "<p>The content of FAQ page.</p>"
+    }
+  }
+]
