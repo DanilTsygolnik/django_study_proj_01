@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages',
     'quotes.apps.QuotesConfig',
+    'registration.apps.RegistrationConfig',
 ]
 
 MIDDLEWARE = [
