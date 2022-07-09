@@ -34,7 +34,12 @@ def quote_req(request):
     if request.method == 'POST':
         form = QuoteForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            quote = form.save(commit=False)
+            try:
+                quote.username = request.user
+            except Exception:
+                pass
+            quote.save()
             return HttpResponseRedirect('/quote/?submitted=True')
     form = QuoteForm()
     if 'submitted' in request.GET:
