@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-
+from django.contrib.auth.decorators import login_required
 from .forms import QuoteForm
 from .models import Quote
 from pages.models import Page
@@ -27,6 +28,7 @@ class QuoteView(DetailView):
         return context
 
 
+@login_required(login_url=reverse_lazy('login'))
 def quote_req(request):
     submitted = False
     if request.method == 'POST':
