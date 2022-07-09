@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views.generic.list import ListView
 
 from .forms import QuoteForm
+from .models import Quote
 from pages.models import Page
+
+class QuoteList(ListView):
+    model = Quote
+    context_object_name = 'all_quotes'
 
 def quote_req(request):
     submitted = False
