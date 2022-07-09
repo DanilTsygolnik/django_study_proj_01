@@ -27,5 +27,6 @@ urlpatterns = [
     path('quote/', include('quotes.urls')),
     path('show/quote/<int:pk>', QuoteView.as_view(), name='quote-details'),
     path('show/quotes/', QuoteList.as_view(), name='show-quotes'),
+    path('', include('django.contrib.auth.urls')),
     path('', include('pages.urls')),
 ]
