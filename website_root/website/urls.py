@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-
 from quotes.views import QuoteList, QuoteView
+from registration.views import Register
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', Register.as_view(), name='register'),
     path('quote/', include('quotes.urls')),
     path('show/quote/<int:pk>', QuoteView.as_view(), name='quote-details'),
     path('show/quotes/', QuoteList.as_view(), name='show-quotes'),
