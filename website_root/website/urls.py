@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from quotes.views import QuoteList
+from quotes.views import QuoteList, QuoteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('quote/', include('quotes.urls')),
+    path('show/quote/<int:pk>', QuoteView.as_view(), name='quote-details'),
     path('show/quotes/', QuoteList.as_view(), name='show-quotes'),
     path('', include('pages.urls')),
 ]
