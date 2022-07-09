@@ -4,13 +4,17 @@ from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import QuoteForm
 from .models import Quote
 from pages.models import Page
 
-class QuoteList(ListView):
-    model = Quote
+class QuoteList(LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('login')
     context_object_name = 'all_quotes'
+
+    def get_queryset(self):
+        return Quote.objects.filter(username=self.request.user)
 
     def get_context_data(self, **kwargs):
         context = super(QuoteList, self).get_context_data(**kwargs)
