@@ -23,9 +23,12 @@ class QuoteList(LoginRequiredMixin, ListView):
 
 
 class QuoteView(DetailView):
-    model = Quote
+    login_url = reverse_lazy('login')
     context_object_name = 'quote'
-    
+ 
+    def get_queryset(self):
+        return Quote.objects.filter(username=self.request.user)
+ 
     def get_context_data(self, **kwargs):
         context = super(QuoteView, self).get_context_data(**kwargs)
         context['page_list'] = Page.objects.all()
