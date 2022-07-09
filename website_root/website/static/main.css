@@ -111,3 +111,6 @@ input {
 .quoterow td {
     padding: 5px 10px;
 }
+.altrow {
+    background-color: #e0e0e0
+}

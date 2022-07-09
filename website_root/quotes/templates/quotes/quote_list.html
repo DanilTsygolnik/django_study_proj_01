@@ -12,7 +12,7 @@
       <th>Quoted</th><th>Quote Price</th>
     </tr>
     {% for quote in all_quotes %}
-    <tr class="quoterow">
+    <tr class="quoterow {% cycle '' 'altrow' %}">
       <td>{{ quote.id }}</td>
       <td>{{ quote.name }}</td>
       <td>{{ quote.company }}</td>
