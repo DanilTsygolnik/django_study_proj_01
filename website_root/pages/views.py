@@ -19,7 +19,8 @@ def render_contact_form(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             return HttpResponseRedirect('/contact?submitted=True')
-    form = ContactForm()
-    if 'submitted' in request.GET:
-        submitted = True
+    else:
+        form = ContactForm()
+        if 'submitted' in request.GET:
+            submitted = True
     return render(request, 'contact/contact.html', {'form': form, 'page_list': Page.objects.all(), 'submitted': submitted})
